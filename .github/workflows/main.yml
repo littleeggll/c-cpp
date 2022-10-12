@@ -79,7 +79,7 @@ jobs:
           dashboard_address: https://app.code-intelligence.com/
 
       - id: upload-artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: ${{ (success() || failure()) }}
         with:
           name: ci_fuzz_results
