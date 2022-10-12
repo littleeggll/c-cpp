@@ -43,7 +43,6 @@ jobs:
           echo "        branch: $BRANCH_NAME" >> cifuzz.yaml
           cat cifuzz.yaml
           tar -cvzf ../fuzz_tests.tar.gz *
-
       - name: Upload fuzzer
         id: start-fuzzing
         env:
@@ -61,7 +60,6 @@ jobs:
           echo "${RUN_RESULT}"
           export CAMPAIGN_RUN_NAME=$(echo "$RUN_RESULT" | jq -r '."name"')
           echo "::set-output name=test_collection_run::${CAMPAIGN_RUN_NAME}"
-
       - name: Monitor Fuzzing
         uses: CodeIntelligenceTesting/github-actions/monitor-fuzzing@v3
         with:
@@ -89,7 +87,6 @@ jobs:
             findings.json
             coverage.json
             web_app_address.txt
-
       - id: coverage
         uses: CodeIntelligenceTesting/github-actions/report-coverage@master
         with:
