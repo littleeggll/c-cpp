@@ -91,5 +91,5 @@ jobs:
         uses: CodeIntelligenceTesting/github-actions/report-coverage@master
         with:
           ci_fuzz_api_token: ${{secrets.CI_FUZZ_API_TOKEN}}
-          project: c-cpp-demo-c170bc17
+          project: c-cpp-demo
           test_collection_run: ${{ steps.start-fuzzing.outputs.test-collection-run }}
